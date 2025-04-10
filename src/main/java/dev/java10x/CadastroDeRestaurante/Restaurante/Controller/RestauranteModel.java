@@ -1,6 +1,9 @@
-package dev.java10x.CadastroDeRestaurante;
+package dev.java10x.CadastroDeRestaurante.Restaurante.Controller;
 
+import dev.java10x.CadastroDeRestaurante.Cardapios.CardapiosModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 // entity ele transforma uma classe em entidade do banco de dados
 // JPA java persistence API
@@ -13,6 +16,11 @@ public class RestauranteModel {
    private Long id;
     private String nome;
     private String email;
+
+    //@ManyToOne um restaurante pode ter varios cardapios
+    @ManyToOne
+    @JoinColumn(name="cardapios_id")// Foreing key ou chave estrangeira
+    private CardapiosModel cardapios;
 
 
     public RestauranteModel() {
