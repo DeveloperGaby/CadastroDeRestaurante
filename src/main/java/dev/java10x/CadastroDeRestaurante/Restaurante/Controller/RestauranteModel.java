@@ -21,6 +21,7 @@ public class RestauranteModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    @Column(unique = true)
     private String email;
 
     //@ManyToOne um restaurante pode ter varios cardapios
