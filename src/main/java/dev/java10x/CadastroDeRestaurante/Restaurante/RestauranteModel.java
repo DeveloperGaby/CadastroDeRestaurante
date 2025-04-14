@@ -1,4 +1,4 @@
-package dev.java10x.CadastroDeRestaurante.Restaurante.Controller;
+package dev.java10x.CadastroDeRestaurante.Restaurante;
 
 import dev.java10x.CadastroDeRestaurante.Cardapios.CardapiosModel;
 import jakarta.persistence.*;

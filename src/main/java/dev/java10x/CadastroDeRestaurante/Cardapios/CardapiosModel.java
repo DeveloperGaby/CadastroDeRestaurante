@@ -1,6 +1,6 @@
 package dev.java10x.CadastroDeRestaurante.Cardapios;
 
-import dev.java10x.CadastroDeRestaurante.Restaurante.Controller.RestauranteModel;
+import dev.java10x.CadastroDeRestaurante.Restaurante.RestauranteModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

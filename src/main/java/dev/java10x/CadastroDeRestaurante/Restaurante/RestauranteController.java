@@ -1,4 +1,4 @@
-package dev.java10x.CadastroDeRestaurante.Restaurante.Controller;
+package dev.java10x.CadastroDeRestaurante.Restaurante;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
