@@ -19,8 +19,12 @@ public class RestauranteModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name= "ID")
     private Long id;
+
+    @Column(name = "nome")
     private String nome;
+
     @Column(unique = true)
     private String email;
 

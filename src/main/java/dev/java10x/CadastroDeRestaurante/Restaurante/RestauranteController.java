@@ -11,6 +11,6 @@ public class RestauranteController {
 
     @GetMapping("/boasvindas")
     public String boasVindas(){
-        return "Essa e a minha primeira mensagem nessa rota";
+        return "Eu sou uma grande Desenvolvedora java";
     }
 }

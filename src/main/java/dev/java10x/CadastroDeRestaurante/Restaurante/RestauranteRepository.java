@@ -1,4 +1,7 @@
+
 package dev.java10x.CadastroDeRestaurante.Restaurante;
 
-public class RestauranteRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RestauranteRepository extends JpaRepository<RestauranteModel,Long> {
 }
