@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class RestauranteController {
 
+    //metodo http que ele escuta é o Get
     @GetMapping("/boasvindas")
     public String boasVindas(){
         return "Eu sou uma grande Desenvolvedora java";
