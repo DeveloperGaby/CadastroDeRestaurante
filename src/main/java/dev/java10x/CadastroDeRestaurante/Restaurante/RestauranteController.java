@@ -34,7 +34,7 @@ public class RestauranteController {
    // Alterar Dados dos Restaurantes UPDATE
     @PutMapping("/alterarID")
     public String alterarRestaurantePorId(){
-        return "Alterar restaurante Por ID";
+        return "Alterar Restaurante Por ID";
     }
 
    //deletar restaurante por ID DELETE
