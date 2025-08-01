@@ -3,7 +3,7 @@ package dev.java10x.CadastroDeRestaurante.Restaurante;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/restaurante")
 public class RestauranteController {
 
     //metodo http que ele escuta é o Get
