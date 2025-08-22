@@ -14,26 +14,26 @@ public class CardapioController {
         return "Eu sou uma grande Desenvolvedora java";
     }
 
-    //adicionar Cardapio CREATE
+    //adicionar Cardapio (CREATE)
     @PostMapping("/criar")
     public String criarCardapio() {
         return "Cardapio Criado";
     }
 
-    //mostrar todos os Cardapio READ
+    //mostrar todos os Cardapio (READ)
     @GetMapping("/todos")
     public String mostrarTodosOsCardapios() {
         return " Mostrar Cardapio";
     }
 
-    // mostrar Cardapio por ID READ
+    // mostrar Cardapio por id (READ)
 
     @GetMapping("/todosID")
     public String mostrarTodosOsCardapiosPorId() {
         return "Mostrar Restaurante Por ID";
     }
 
-    // Alterar Dados dos Cardapio UPDATE
+    // Alterar Dados dos Cardapio (UPDATE)
     @PutMapping("/alterarID")
     public String alterarCardapioPorId() {
         return "Alterar Cardapio Por ID";

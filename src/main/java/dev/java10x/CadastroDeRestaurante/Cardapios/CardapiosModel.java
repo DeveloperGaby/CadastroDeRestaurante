@@ -1,5 +1,6 @@
 package dev.java10x.CadastroDeRestaurante.Cardapios;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.CadastroDeRestaurante.Restaurante.RestauranteModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,7 @@ public class CardapiosModel {
 
    //@OneToMany um cardapio pode ter varios restaurantes
    @OneToMany(mappedBy = "cardapios")
+   @JsonIgnore
     private List <RestauranteModel> restauranteModel;
 
 
