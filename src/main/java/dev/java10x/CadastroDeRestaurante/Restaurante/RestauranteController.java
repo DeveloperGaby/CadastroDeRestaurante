@@ -35,9 +35,9 @@ public class RestauranteController {
         return restauranteService.listarRestaurantesPorId(id) ;
     }
     // Alterar Dados dos Restaurantes UPDATE
-    @PutMapping("/alterarID")
-    public String alterarRestaurantePorId() {
-        return "Alterar Restaurante Por ID";
+    @PutMapping("/alterar/{id}")
+    public RestauranteModel alterarRestaurantePorId(@PathVariable Long id,@RequestBody RestauranteModel restauranteAtualizado) {
+        return restauranteService.atualizarRestaurante(id,restauranteAtualizado);
     }
     //deletar restaurante por ID DELETE
     @DeleteMapping("/deletar/{id}")

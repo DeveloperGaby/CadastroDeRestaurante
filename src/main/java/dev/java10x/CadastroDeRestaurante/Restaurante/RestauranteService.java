@@ -39,6 +39,16 @@ public class RestauranteService {
         restauranteRepository.deleteById(id);
     }
 
+
+    public RestauranteModel atualizarRestaurante(Long id, RestauranteModel restauranteAtualizado){
+        if(restauranteRepository.existsById(id)){
+            restauranteAtualizado.setId(id);
+        return  restauranteRepository.save(restauranteAtualizado);
+
+        }
+      return null;
+    }
+
 }
 
 
