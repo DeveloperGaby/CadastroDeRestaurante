@@ -28,6 +28,9 @@ public class RestauranteModel {
     @Column(unique = true)
     private String email;
 
+    @Column(name="doces")
+    private String doces;
+
     //@ManyToOne um restaurante pode ter varios cardapios
     @ManyToOne
     @JoinColumn(name = "cardapios_id")// Foreing key ou chave estrangeira

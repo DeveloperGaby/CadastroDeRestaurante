@@ -1,2 +1,0 @@
-ALTER TABLE tb_cardápios
-ADD COLUMN tortas VARCHAR(255)

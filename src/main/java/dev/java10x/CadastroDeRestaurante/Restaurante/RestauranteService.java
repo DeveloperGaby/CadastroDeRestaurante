@@ -11,9 +11,11 @@ import java.util.Optional;
 public class RestauranteService {
 
     private RestauranteRepository restauranteRepository;
+    private RestauranteMapper restauranteMapper;
 
-    public RestauranteService(RestauranteRepository restauranteRepository) {
+    public RestauranteService(RestauranteRepository restauranteRepository, RestauranteMapper restauranteMapper) {
         this.restauranteRepository = restauranteRepository;
+        this.restauranteMapper = restauranteMapper;
     }
 
     public List<RestauranteModel> listarRestaurantes() {
@@ -28,8 +30,11 @@ public class RestauranteService {
 
     }
 
-    public RestauranteModel criarRestaurante(RestauranteModel restaurante) {
-        return restauranteRepository.save(restaurante);
+    public RestauranteDTO criarRestaurante(RestauranteDTO restauranteDTO) {
+        RestauranteModel restaurante= restauranteMapper.map(restauranteDTO);
+        restaurante= restauranteRepository.save(restaurante);
+        return restauranteMapper.map(restaurante);
+
 
 
     }

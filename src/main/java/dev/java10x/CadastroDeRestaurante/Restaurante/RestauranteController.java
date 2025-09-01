@@ -20,8 +20,8 @@ public class RestauranteController {
     }
     //adicionar restaurante CREATE
     @PostMapping("/criar")
-    public RestauranteModel  criarRestaurante(@RequestBody RestauranteModel restaurante) {
-        return restauranteService.criarRestaurante(restaurante);
+    public RestauranteDTO  criarRestaurante(@RequestBody RestauranteDTO restauranteDTO) {
+        return restauranteService.criarRestaurante(restauranteDTO);
     }
     //mostrar todos os restaurantes READ
     @GetMapping("/listar")
