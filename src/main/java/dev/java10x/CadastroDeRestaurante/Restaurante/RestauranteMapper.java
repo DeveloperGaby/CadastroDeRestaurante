@@ -13,7 +13,6 @@ public class RestauranteMapper {
         restauranteModel.setDoces(restauranteDTO.getDoces());
         restauranteModel.setEmail(restauranteDTO.getEmail());
 
-
         return restauranteModel;
     }
 
@@ -25,7 +24,6 @@ public class RestauranteMapper {
          restauranteDTO.setCardapios(restauranteModel.getCardapios());
          restauranteDTO.setDoces(restauranteModel.getDoces());
          restauranteDTO.setEmail(restauranteModel.getEmail());
-
 
          return restauranteDTO;
     }

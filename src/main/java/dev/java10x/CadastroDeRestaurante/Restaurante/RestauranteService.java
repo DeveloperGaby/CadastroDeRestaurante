@@ -2,10 +2,13 @@ package dev.java10x.CadastroDeRestaurante.Restaurante;
 
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static org.hibernate.Hibernate.map;
 
 @Service
 public class RestauranteService {
@@ -18,14 +21,16 @@ public class RestauranteService {
         this.restauranteMapper = restauranteMapper;
     }
 
-    public List<RestauranteModel> listarRestaurantes() {
-
-        return restauranteRepository.findAll();
+    public List<RestauranteDTO> listarRestaurantes() {
+        List<RestauranteModel> restaurantes =restauranteRepository.findAll();
+        return  restaurantes.stream()
+        .map(restauranteMapper::map)
+        .collect(Collectors.toList());
     }
 
-    public RestauranteModel listarRestaurantesPorId(Long id) {
+    public RestauranteDTO listarRestaurantesPorId(Long id) {
         Optional<RestauranteModel> restaurantePorId = restauranteRepository.findById(id);
-        return restaurantePorId.orElse(null);
+        return restaurantePorId.map(restauranteMapper::map).orElse(null);
 
 
     }
@@ -45,10 +50,13 @@ public class RestauranteService {
     }
 
 
-    public RestauranteModel atualizarRestaurante(Long id, RestauranteModel restauranteAtualizado){
-        if(restauranteRepository.existsById(id)){
-            restauranteAtualizado.setId(id);
-        return  restauranteRepository.save(restauranteAtualizado);
+    public RestauranteDTO atualizarRestaurante(Long id, RestauranteDTO restauranteDTO){
+       Optional<RestauranteModel> restauranteExistente= restauranteRepository.findById(id);
+       if(restauranteExistente.isPresent()){
+           RestauranteModel restauranteAtualizado= restauranteMapper.map(restauranteDTO);
+           restauranteAtualizado.setId(id);
+           RestauranteModel restauranteSalvo= restauranteRepository.save(restauranteAtualizado);
+           return restauranteMapper.map(restauranteSalvo);
 
         }
       return null;

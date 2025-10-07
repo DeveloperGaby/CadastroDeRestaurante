@@ -25,18 +25,18 @@ public class RestauranteController {
     }
     //mostrar todos os restaurantes READ
     @GetMapping("/listar")
-    public List<RestauranteModel> listarRestaurantes() {
+    public List<RestauranteDTO> listarRestaurantes() {
         return restauranteService.listarRestaurantes();
     }
 
     // mostrar restaurante por ID READ
     @GetMapping("/listar/{id}")
-    public RestauranteModel listarRestaurantesPorId(@PathVariable Long id) {
+    public RestauranteDTO listarRestaurantesPorId(@PathVariable Long id) {
         return restauranteService.listarRestaurantesPorId(id) ;
     }
     // Alterar Dados dos Restaurantes UPDATE
     @PutMapping("/alterar/{id}")
-    public RestauranteModel alterarRestaurantePorId(@PathVariable Long id,@RequestBody RestauranteModel restauranteAtualizado) {
+    public RestauranteDTO alterarRestaurantePorId(@PathVariable Long id,@RequestBody RestauranteDTO restauranteAtualizado) {
         return restauranteService.atualizarRestaurante(id,restauranteAtualizado);
     }
     //deletar restaurante por ID DELETE
