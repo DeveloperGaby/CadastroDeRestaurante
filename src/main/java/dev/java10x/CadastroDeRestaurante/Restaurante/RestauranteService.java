@@ -13,8 +13,8 @@ import static org.hibernate.Hibernate.map;
 @Service
 public class RestauranteService {
 
-    private RestauranteRepository restauranteRepository;
-    private RestauranteMapper restauranteMapper;
+    private final RestauranteRepository restauranteRepository;
+    private final RestauranteMapper restauranteMapper;
 
     public RestauranteService(RestauranteRepository restauranteRepository, RestauranteMapper restauranteMapper) {
         this.restauranteRepository = restauranteRepository;

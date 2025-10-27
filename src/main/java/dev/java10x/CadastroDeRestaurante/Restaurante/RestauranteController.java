@@ -8,7 +8,7 @@ import java.util.List;
 @RequestMapping("/restaurante")
 public class RestauranteController {
 
-    private RestauranteService restauranteService;
+    private final RestauranteService restauranteService;
 
     public RestauranteController(RestauranteService restauranteService) {
         this.restauranteService = restauranteService;
